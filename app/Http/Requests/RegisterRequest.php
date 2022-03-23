@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 
+use Illuminate\Support\Facades\Hash;
+
 class RegisterRequest extends FormRequest
 {
     /**
@@ -51,7 +53,7 @@ class RegisterRequest extends FormRequest
             'name'     => $this->name,
             'email'    => $this->email,
             'phone'    => $this->phone,
-            'password' => $this->password,
+            'password' => Hash::make($this->password),
         ];
     }
 }
