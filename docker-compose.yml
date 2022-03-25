@@ -24,8 +24,8 @@ services:
             - meilisearch
             - selenium
     db:
-        image: mysql:8.0
-        container_name: mysql-db
+        image: mariadb:10.5.8
+        container_name: maria-db
         ports:
             - "3308:3308"
         environment:
